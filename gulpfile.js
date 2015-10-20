@@ -34,10 +34,12 @@ gulp.task('styles', ['source'], function () {
         .pipe(sourcemaps.write())
         .pipe(autoprefixer())
         .pipe(gulp.dest(dist))
+        .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(minify())
         .pipe(rename(function (path) {
             path.basename += '.min';
         }))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(dist))
         .pipe(browserSync.reload({stream: true}));
 });
