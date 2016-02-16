@@ -6,6 +6,7 @@
 .weui_card {
     background-color: #FFFFFF;
     margin-top: 10px;
+    display: block;
     &:first-child {
         margin-top: 0;
     }
@@ -17,6 +18,14 @@
     }
     &:after {
         .setBottomLine(@lineColor);
+    }
+}
+
+a.weui_card {
+    color: inherit;
+    .setTapColor;
+    &:active {
+        background-color: #ECECEC;
     }
 }
 
